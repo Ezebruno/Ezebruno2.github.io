@@ -1,0 +1,182 @@
+/* Estilo base */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #3b2f2f;
+    background: url('imgs/freddie-marriage-p1Hlr3fdjTo-unsplash.jpg') center/cover no-repeat fixed;
+    overflow-x: hidden;
+}
+
+/* Encabezado más pequeño */
+header {
+    text-align: center;
+    padding: 3px; /* Menos padding */
+    background-color: rgba(210, 180, 140, 0.8);
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem; /* Reducir el tamaño del texto */
+}
+
+/* Ícono de volver al inicio en la esquina superior derecha */
+header .home-icon {
+    position:relative;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    display:contents;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+header .home-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+header .home-icon:hover {
+    background-color: #d2b48c;
+    transform: scale(1.1);
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    padding-top: 80px; /* Espacio para el header fijo */
+    padding-bottom: 50px; /* Espacio para el footer */
+    gap: 10px;
+}
+
+/* Recuadros laterales */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    padding: 5px;
+}
+
+.sidebar .box {
+    width: 150px;
+    height: 150px;
+    margin: 5px 0;
+    border: 1px solid #d2b48c;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.sidebar .box:hover img {
+    transform: scale(1.1);
+}
+
+/* Sección central */
+main.story {
+    flex: 2;
+    padding: 20px;
+    text-align: justify;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+    overflow-y: auto;
+}
+
+main.story p {
+    font-size: 1rem;
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #5c4033;
+}
+
+/* Pie de página más pequeño */
+footer {
+    text-align: center;
+    padding: 2px; /* Menos padding */
+    background-color: rgba(210, 180, 140, 0.8);
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.2);
+    font-size: 0.7rem; /* Reducir el tamaño de la fuente */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; /* Ocultar las barras laterales */
+    }
+
+    main.story {
+        flex: 1;
+    }
+
+    header .home-icon {
+        top: 8px;
+        right: 8px;
+        width: 36px;
+        height: 36px;
+    }
+
+    header .home-icon img {
+        width: 20px;
+        height: 20px;
+    }
+
+    header {
+        padding: 4px; /* Reducir aún más el padding */
+    }
+
+    header h1 {
+        font-size: 1.2rem; /* Ajustar el tamaño del texto en pantallas pequeñas */
+    }
+
+    footer {
+        padding: 6px; /* Reducir el padding para pantallas pequeñas */
+        font-size: 0.6rem; /* Reducir aún más el tamaño de la fuente */
+    }
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+/* Recuadro para las imágenes */
+.sidebar .box {
+    width: 100%;
+    height: auto; /* Deja que la altura se ajuste a la imagen */
+    overflow: hidden; /* Evita que las imágenes se desborden */
+    display: flex;
+    justify-content: center; /* Centra la imagen */
+    align-items: center; /* Centra la imagen verticalmente */
+}
+
+/* Estilo de las imágenes */
+.sidebar .box img {
+    width: 100%;
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: contain; /* Ajusta la imagen sin recortarla */
+}
